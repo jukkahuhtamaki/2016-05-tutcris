@@ -11,6 +11,35 @@ Huhtamäki, J. (2016). Visualizing Co-authorship Networks for Actionable Insight
 
 An [open access copy of the article](http://urn.fi/URN:NBN:fi:tty-201610244630) is available through TUT Research Portal.
 
+## Getting ready
+
+Create virtual environment:
+
+	python3 -m venv VENV
+
+Activate the virtual environment:
+
+	source VENV/bin/activate
+
+Install the needed packages
+
+	pip install -r requirements.txt 
+
+Create folders
+
+	data
+	data/01-source
+	data/03-network
+
+Search and put the data in place
+
+	data/01-source/search.bib
+
+Run
+
+	python run_process_tut_bibtex.py 	
+	
+
 ## Meta
 
 Author: Jukka Huhtamäki ([@jnkka](https://twitter.com/jnkka))
