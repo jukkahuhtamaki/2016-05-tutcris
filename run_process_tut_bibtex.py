@@ -7,13 +7,13 @@ bibliographical data in BibTeX.'''
 __author__ = 'Jukka Huhtamäki'
 __twitter__ = '@jnkka'
 
-import bibtexparser
+# import bibtexparser
 from pprint import pprint
 import networkx as nx
 import time
 
-with open('data/01-raw/full-texts-at-tut.bib') as bibtex_file:
-  bibtex_str = bibtex_file.read()
+# with open('data/01-source/search.bib') as bibtex_file:
+#   bibtex_str = bibtex_file.read()
 
 from pybtex.database import parse_file
 
@@ -27,13 +27,13 @@ def author_name(person):
   return name
 
 network = nx.Graph()
-db = parse_file('data/01-raw/full-texts-at-tut.bib')
+db = parse_file('data/01-source/search.bib')
 
 for entry in db.entries:
   pprint(entry)
-  print len(db.entries[entry].persons['author']), 'authors'
+  print(len(db.entries[entry].persons['author']), 'authors')
   for author in db.entries[entry].persons['author']:
-    print author
+    print(author)
     if not network.has_node(author_name(author)):
       network.add_node(author_name(author))
 
